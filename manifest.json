@@ -1,0 +1,11 @@
+{
+  "name": "자산 관리 콘솔",
+  "short_name": "자산관리",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#0B0E11",
+  "theme_color": "#0B0E11",
+  "icons": [
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
