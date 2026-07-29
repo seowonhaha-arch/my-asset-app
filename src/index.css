@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+/*
+  ⚠️ 중요: 원본 HTML 파일의 <head><style> 안에는
+  body, #boot, #errbox 스타일만 있고,
+  실제 앱 코드에서 쓰는 .mono, .panel, .led, .chips, .fld, .tinput,
+  .pulse-cta, .toast-item, .tip-bubble 클래스의 정의는 없었어요.
+  (아마 원본에는 있었는데 저에게 전달된 내용에는 빠져있는 것 같아요)
+
+  아래는 제가 코드 사용 맥락(모노스페이스 숫자, 카드 배경 등)을 보고
+  "최소한 어색해 보이지 않게" 채워 넣은 추정치예요.
+  원본 디자인 그대로 쓰고 싶다면, 원래 갖고 계신 스타일 정의로
+  이 블록을 교체해주세요.
+*/
+body {
+  margin: 0;
+  background: #0b0e11;
+  overscroll-behavior-y: none;
+}
+
+.mono {
+  font-family: 'SFMono-Regular', ui-monospace, Menlo, Consolas, monospace;
+}
+
+.panel {
+  background: #12161b;
+  border: 1px solid #1f262d;
+}
+
+.led {
+  box-shadow: 0 0 6px 1px currentColor;
+}
+
+.chips {
+  scrollbar-width: none;
+}
+.chips::-webkit-scrollbar {
+  display: none;
+}
+
+.fld:focus-within {
+  border-color: #4fd1c5 !important;
+}
+
+.tinput:focus {
+  outline: none;
+  border-color: #4fd1c5;
+}
+
+@keyframes pulseCta {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(79, 209, 197, 0.35); }
+  50% { box-shadow: 0 0 0 8px rgba(79, 209, 197, 0); }
+}
+.pulse-cta {
+  animation: pulseCta 2s ease-in-out infinite;
+}
+
+@keyframes toastIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.toast-item {
+  animation: toastIn 0.2s ease-out;
+}
+
+@keyframes tipIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.tip-bubble {
+  animation: tipIn 0.15s ease-out;
+}
